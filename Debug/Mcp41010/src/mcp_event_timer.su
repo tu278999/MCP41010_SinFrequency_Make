@@ -1,0 +1,9 @@
+mcp_event_timer.c:32:6:vMCPEventPost	16	static
+mcp_event_timer.c:36:9:xMCPEventGet	16	static
+mcp_event_timer.c:44:6:vStartUpTimer	8	static
+mcp_event_timer.c:49:6:vStopAllTimerFunc	8	static
+mcp_event_timer.c:59:6:vStartTimerFreq	8	static
+mcp_event_timer.c:64:6:vStartTimerFreqManual	8	static
+mcp_event_timer.c:69:6:vStartTimerDirac100	8	static
+mcp_event_timer.c:74:6:vStartTimerDirac200	8	static
+mcp_event_timer.c:86:6:HAL_TIM_PeriodElapsedCallback	16	static

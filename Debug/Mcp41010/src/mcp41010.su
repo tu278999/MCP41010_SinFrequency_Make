@@ -1,0 +1,5 @@
+mcp41010.c:23:6:vMCPStart	16	static
+mcp41010.c:41:6:vMCPStopExternISR	8	static
+mcp41010.c:46:6:vMCPStartExternISR	8	static
+mcp41010.c:56:6:vMCP41010Poll	24	static
+mcp41010.c:139:6:HAL_GPIO_EXTI_Callback	16	static

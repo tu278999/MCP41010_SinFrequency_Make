@@ -1,0 +1,7 @@
+adc.c:20:6:vADCInit	4	static
+adc.c:26:6:vADCEnable	4	static
+adc.c:33:6:vADCStartConversion	8	static
+adc.c:51:6:vADCStopConversion	8	static
+adc.c:61:6:vADCSetAvegareValue	24	static
+adc.c:74:6:vADCSaveSampleValue	8	static
+adc.c:93:6:HAL_ADC_ConvCpltCallback	16	static

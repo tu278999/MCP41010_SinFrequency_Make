@@ -1,0 +1,7 @@
+uart_mcp.c:91:6:vMCPUartStart	16	static
+uart_mcp.c:103:6:vMCPUartPoll	24	static
+uart_mcp.c:143:13:prvvMCPUartManualSweep	32	static
+uart_mcp.c:214:13:prvvMCPUartMenuSelect	24	static
+uart_mcp.c:325:6:HAL_UART_RxCpltCallback	16	static
+uart_mcp.c:344:6:HAL_UART_TxCpltCallback	24	static
+uart_mcp.c:381:13:prvvFloatToString	24	static

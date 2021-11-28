@@ -1,0 +1,13 @@
+mcphandledata.c:26:6:vSetAllParameter	24	static
+mcphandledata.c:33:6:vSetSinFrequency	16	static
+mcphandledata.c:37:7:fGetSinFrequency	4	static
+mcphandledata.c:41:6:vSetSendBufMCP1	32	static
+mcphandledata.c:59:7:vSetSendBufMCP2	16	static
+mcphandledata.c:64:6:vSetSendBufMCP3	16	static
+mcphandledata.c:69:6:vMCPSendToAllMCP	8	static
+mcphandledata.c:79:6:vWriteOnlyMCP1	8	static
+mcphandledata.c:89:6:vWriteOnlyMCP2	4	static
+mcphandledata.c:100:6:vWriteOnlyMCP3	4	static
+mcphandledata.c:111:16:prvucSetDValue	24	static
+mcphandledata.c:126:13:prvvSetSendBuf	16	static
+mcphandledata.c:132:16:prviRoundingNumber	24	static
