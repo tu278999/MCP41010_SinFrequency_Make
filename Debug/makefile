@@ -36,34 +36,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := mcp41_ver1
+BUILD_ARTIFACT_NAME := MCP41010_SinFrequency_Make
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-mcp41_ver1.elf \
+MCP41010_SinFrequency_Make.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-mcp41_ver1.list \
+MCP41010_SinFrequency_Make.list \
 
 OBJCOPY_BIN += \
-mcp41_ver1.bin \
+MCP41010_SinFrequency_Make.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: mcp41_ver1.elf secondary-outputs
+main-build: MCP41010_SinFrequency_Make.elf secondary-outputs
 
 # Tool invocations
-mcp41_ver1.elf: $(OBJS) $(USER_OBJS) E:\OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\mcp41_ver1\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "mcp41_ver1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\OneDrive - Hanoi University of Science and Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\mcp41_ver1\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="mcp41_ver1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MCP41010_SinFrequency_Make.elf: $(OBJS) $(USER_OBJS) E:\OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\MCP41010_SinFrequency_Make\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MCP41010_SinFrequency_Make.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\OneDrive - Hanoi University of Science and Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\MCP41010_SinFrequency_Make\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MCP41010_SinFrequency_Make.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -72,19 +72,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-mcp41_ver1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "mcp41_ver1.list"
+MCP41010_SinFrequency_Make.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "MCP41010_SinFrequency_Make.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-mcp41_ver1.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "mcp41_ver1.bin"
+MCP41010_SinFrequency_Make.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "MCP41010_SinFrequency_Make.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) mcp41_ver1.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) MCP41010_SinFrequency_Make.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

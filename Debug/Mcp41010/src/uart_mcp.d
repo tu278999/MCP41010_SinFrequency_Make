@@ -1,5 +1,5 @@
 Mcp41010/src/uart_mcp.o: ../Mcp41010/src/uart_mcp.c \
- E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/uart_mcp.h \
+ E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/uart_mcp.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -32,10 +32,10 @@ Mcp41010/src/uart_mcp.o: ../Mcp41010/src/uart_mcp.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/mcp41010.h \
- E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/adc.h
+ E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/mcp41010.h \
+ E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/adc.h
 
-E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/uart_mcp.h:
+E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/uart_mcp.h:
 
 ../Core/Inc/main.h:
 
@@ -103,6 +103,6 @@ E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Em
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/mcp41010.h:
+E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/mcp41010.h:
 
-E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/mcp41_ver1/Mcp41010/inc/adc.h:
+E:/OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology/Document_TuBK/Embedded-C/STM32/mcp41010_workspace2/MCP41010_SinFrequency_Make/Mcp41010/inc/adc.h:
