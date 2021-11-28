@@ -1,0 +1,6 @@
+cmd.c:45:6:vCMDPoll	16	static
+cmd.c:138:17:xCMDReadCmd	4	static
+cmd.c:146:13:vCMDClearCmd	4	static
+cmd.c:150:6:vCMDCompleted	8	static
+cmd.c:156:6:vCMDError	8	static
+cmd.c:162:6:vCMDMasterReadADC	16	static

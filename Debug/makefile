@@ -9,7 +9,17 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Mcp41010/src/subdir.mk
+-include modbus/tcp/subdir.mk
+-include modbus/rtu/subdir.mk
+-include modbus/port/subdir.mk
+-include modbus/functions/subdir.mk
+-include modbus/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
+-include Mcp41010_rs485/src/subdir.mk
+-include Mcp41010_rs485/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -36,34 +46,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := MCP41010_SinFrequency_Make
+BUILD_ARTIFACT_NAME := test
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-MCP41010_SinFrequency_Make.elf \
+test.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-MCP41010_SinFrequency_Make.list \
+test.list \
 
 OBJCOPY_BIN += \
-MCP41010_SinFrequency_Make.bin \
+test.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: MCP41010_SinFrequency_Make.elf secondary-outputs
+main-build: test.elf secondary-outputs
 
 # Tool invocations
-MCP41010_SinFrequency_Make.elf: $(OBJS) $(USER_OBJS) E:\OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\MCP41010_SinFrequency_Make\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MCP41010_SinFrequency_Make.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\OneDrive - Hanoi University of Science and Technology\Document_TuBK\Embedded-C\STM32\mcp41010_workspace2\MCP41010_SinFrequency_Make\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MCP41010_SinFrequency_Make.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+test.elf: $(OBJS) $(USER_OBJS) E:\OneDrive\ -\ Hanoi\ University\ of\ Science\ and\ Technology\Document_TuBK\Embedded-C\STM32\mcpANDmodbus\test\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\OneDrive - Hanoi University of Science and Technology\Document_TuBK\Embedded-C\STM32\mcpANDmodbus\test\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -72,19 +82,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-MCP41010_SinFrequency_Make.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "MCP41010_SinFrequency_Make.list"
+test.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "test.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-MCP41010_SinFrequency_Make.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "MCP41010_SinFrequency_Make.bin"
+test.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "test.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) MCP41010_SinFrequency_Make.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) test.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

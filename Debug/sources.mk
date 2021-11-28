@@ -23,5 +23,15 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
-Mcp41010/src \
+Mcp41010_rs485 \
+Mcp41010_rs485/src \
+Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
+Middlewares/Third_Party/FreeRTOS/Source \
+Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
+Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
+modbus/functions \
+modbus \
+modbus/port \
+modbus/rtu \
+modbus/tcp \
 

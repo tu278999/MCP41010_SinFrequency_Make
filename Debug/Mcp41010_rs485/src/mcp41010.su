@@ -1,0 +1,9 @@
+mcp41010.c:29:6:vMCPStart	16	static,ignoring_inline_asm
+mcp41010.c:59:9:xMCPReleaseCmdFromISR	8	static
+mcp41010.c:67:9:xMCPReleaseCmd	8	static
+mcp41010.c:72:9:xMCPTakeCmd	8	static
+mcp41010.c:79:6:vMCPStopExternISR	8	static
+mcp41010.c:84:6:vMCPStopExternISRFromISR	8	static
+mcp41010.c:89:6:vMCPStartExternISR	8	static
+mcp41010.c:97:6:vMCP41010Poll	16	static
+mcp41010.c:152:6:HAL_GPIO_EXTI_Callback	16	static
