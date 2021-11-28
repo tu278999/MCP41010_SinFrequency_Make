@@ -209,8 +209,8 @@ static void prvvMCPUartManualSweep(void){
 }
 
 
-extern uint16_t CountTimer100ms;
-extern uint16_t CountNumStepFreq;
+extern uint8_t CountTimer100ms;
+extern uint8_t CountNumStepFreq;
 static void prvvMCPUartMenuSelect(void){
 
 

@@ -26,15 +26,15 @@
 #define DOWNCOUNT_100MS			100		//100ms
 
 
-#define DOWNCOUNT_FREQ_MANUAL	30000	//DOWNCOUNT_FREQ_MANUAL = 10000 = 10000ms = 10s
+#define DOWNCOUNT_FREQ_MANUAL	10000	//DOWNCOUNT_FREQ_MANUAL = 10000 = 10000ms = 10s
 										//DOWNCOUNT_FREQ_MANUAL = 15000 = 15000ms = 15s
-										//DOWNCOUNT_FREQ_MANUAL = 30000 = 30000ms = 30s
+										//DOWNCOUNT_FREQ_MANUAL = 50000 = 30000ms = 30s
 
 /*
  * DOWNCOUNT_FREQ_AUTO * DOWNCOUNT_100MS = time to run each frequency step at autoIncreseMode
  * vd: 150 * 100ms  = 15000ms = 15s for running each 'frequency step'
  */
-#define DOWNCOUNT_FREQ_AUTO		300		//max time for each step frequency run: 100 <=> 10s
+#define DOWNCOUNT_FREQ_AUTO		100		//max time for each step frequency run: 100 <=> 10s
 										//max time for each step frequency run: 150 <=> 15s
 										//max time for each step frequency run: 300 <=> 30s
 

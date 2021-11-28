@@ -2,10 +2,9 @@
 #include "uart_mcp.h"
 #include "adc.h"
 
-//extern TIM_HandleTypeDef htim6;	//vd thay cho EXTI interrupt
-//uint8_t downcounter20ms;
-//#define EXTI_TIME_20MS 20
-extern adchandler_t adchandle;
+extern TIM_HandleTypeDef htim6;	//vd thay cho EXTI interrupt
+uint8_t downcounter20ms;
+#define EXTI_TIME_20MS 20
 
 extern UART_HandleTypeDef huart2;
 
@@ -39,16 +38,16 @@ void vMCPStart (void){
 }
 
 void vMCPStopExternISR(void){
-	HAL_NVIC_DisableIRQ(INTR_MCP);
-//	HAL_TIM_Base_Stop_IT(&htim6);
+	//HAL_NVIC_DisableIRQ(INTR_MCP);
+	HAL_TIM_Base_Stop_IT(&htim6);
 
 }
 void vMCPStartExternISR(void){
 	//enable EXTI interrupt
-	HAL_NVIC_EnableIRQ(INTR_MCP);
+//	HAL_NVIC_EnableIRQ(INTR_MCP);
 
-//	downcounter20ms = EXTI_TIME_20MS;
-//	HAL_TIM_Base_Start_IT(&htim6);
+	downcounter20ms = EXTI_TIME_20MS;
+	HAL_TIM_Base_Start_IT(&htim6);
 
 }
 
@@ -136,45 +135,43 @@ void vMCP41010Poll(void){
 	}
 }
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if (GPIO_Pin == INTR1_Pin)
-	{
+
+//
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	if (GPIO_Pin == INTR1_Pin)
+//	{
 
 
-		if(adchandle.status == ADC_ENABLE){		//EXTI occur
-			//start ADC conversion
-			vADCStartConversion();
-		}
 
-		switch (eFuncRun)
-		{
-		case NONEFUNCTION:
-			vMCPStopExternISR();
-		break;
 
-		case STEPFUNCTION:
-			vStepFunctionRun();
-		break;
-
-		case DIRACFUNCTION100:
-			vDirac100FunctionRun();
-		break;
-
-		case DIRACFUNCTION200:
-			vDirac200FunctionRun();
-		break;
-
-		case FREQFUNCTION:
-			vFreqFunctionRun();
-		break;
-
-		default:
-		break;
-		}
-	}
-}
-
+//		switch (eFuncRun)
+//		{
+//		case NONEFUNCTION:
+//			vMCPStopExternISR();
+//		break;
+//
+//		case STEPFUNCTION:
+//			vStepFunctionRun();
+//		break;
+//
+//		case DIRACFUNCTION100:
+//			vDirac100FunctionRun();
+//		break;
+//
+//		case DIRACFUNCTION200:
+//			vDirac200FunctionRun();
+//		break;
+//
+//		case FREQFUNCTION:
+//			vFreqFunctionRun();
+//		break;
+//
+//		default:
+//		break;
+//		}
+//	}
+//}
 
 
 

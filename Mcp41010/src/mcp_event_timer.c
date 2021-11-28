@@ -11,8 +11,8 @@
 #include "adc.h"
 
 extern TIM_HandleTypeDef htim7;
-//extern TIM_HandleTypeDef htim6;	//vd thay cho EXTI interrupt
-//extern uint8_t downcounter20ms;
+extern TIM_HandleTypeDef htim6;	//vd thay cho EXTI interrupt
+extern uint8_t downcounter20ms;
 
 extern uint16_t countSinCycle;
 extern eFuncCiruitRun eFuncRun;
@@ -81,8 +81,8 @@ void vStartTimerDirac200(void){
  * Timer for function run call back
  * ---------------------ISR interrupt after each 1ms----------------------------------
  */
-uint16_t CountTimer100ms = 0;
-uint16_t CountNumStepFreq = 0;
+uint8_t CountTimer100ms = 0;
+uint8_t CountNumStepFreq = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)	//each callback = 1ms
 {
 
@@ -137,12 +137,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)	//each callback = 1m
 						if(CountNumStepFreq == MAX_NUM_STEP_FREQ)
 						{
 							vStopAllTimerFunc();
-							vMCPStopExternISR();
 
 							vMCPEventPost(MCP_BALANCE);
 							CountNumStepFreq = 0;
 							UartHandle.ControlFreq = STOPFREQMODE;
-
+							vMCPStopExternISR();
 						}
 						CountTimer100ms = 0;
 					}
@@ -166,46 +165,46 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)	//each callback = 1m
 		}
 	}
 
-//	else if(htim->Instance == TIM6 )		//example for EXTI
-//	{
-//
-//		if(!downcounter20ms--)
-//		{
-//			if(adchandle.status == ADC_ENABLE){		//EXTI occur
-//				//start ADC conversion
-//				vADCStartConversion();
-//			}
-//
-//			switch (eFuncRun)
-//			{
-//					case NONEFUNCTION:
-//						vMCPStopExternISR();
-//					break;
-//
-//					case STEPFUNCTION:
-//						vStepFunctionRun();
-//					break;
-//
-//					case DIRACFUNCTION100:
-//						vDirac100FunctionRun();
-//					break;
-//
-//					case DIRACFUNCTION200:
-//						vDirac200FunctionRun();
-//					break;
-//
-//					case FREQFUNCTION:
-//						vFreqFunctionRun();
-//					break;
-//
-//					default:
-//					break;
-//			}
-//
-//			downcounter20ms = 20;
-//		}
-//
-//	}
+	else if(htim->Instance == TIM6 )		//example for EXTI
+	{
+
+		if(!downcounter20ms--)
+		{
+			if(adchandle.status == ADC_ENABLE){		//EXTI occur
+				//start ADC conversion
+				vADCStartConversion();
+			}
+
+			switch (eFuncRun)
+			{
+					case NONEFUNCTION:
+						vMCPStopExternISR();
+					break;
+
+					case STEPFUNCTION:
+						vStepFunctionRun();
+					break;
+
+					case DIRACFUNCTION100:
+						vDirac100FunctionRun();
+					break;
+
+					case DIRACFUNCTION200:
+						vDirac200FunctionRun();
+					break;
+
+					case FREQFUNCTION:
+						vFreqFunctionRun();
+					break;
+
+					default:
+					break;
+			}
+
+			downcounter20ms = 20;
+		}
+
+	}
 
 }
 
